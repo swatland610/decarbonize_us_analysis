@@ -1,24 +1,34 @@
 import os
 import json
-from typing import final
-from httpx import request
 import requests
-
 import pandas as pd
 
 from iterator_objects import generation_type, state_abbrieviations
-
 class Extract_Elec_Generation_Data():
     '''
+    From eia.gov/opendata, this object extracts all electricity generation sources for all 50 states, plus DC.
+
+    Depends on file `iterator_objects` to bring in:
+        * generation_type -> api code for each fuel type
+        * state_abbreviations -> two letter abbreviations of all 50 states plus DC
+
+    To retrieve data for all 50 states (plus DC), use the `run_extractor` method.
+
+    All values under the fuel methods are in thousand megawatt hours.
+
+    Methods:
+        * run_extractor -> runs extractor for all two letter abbreviations for all 50 states.
+            - Returns a DataFrame object for all 50 states plus DC's electric generation data.
+
+        * get_eia_response_data -> sends api calls to eia for all fuel types for whatever state abbreviation is fed in
+            - Returns a DataFrame object for each state's data.
+
+        * rearrange_state_df_columns -> takes each state dataframe and rearranges the column order
     '''
     def __init__(self):
         self.EIA_API_KEY = os.getenv('EIA_API_KEY')
-        return self.get_eia_data_all_states()
 
-
-    def get_eia_data_all_states(self, state_abbrieviations=state_abbrieviations):
-        '''
-        '''
+    def run_extractor(self, state_abbrieviations=state_abbrieviations):
         us_df_list = []
 
         for state_abbr in state_abbrieviations:
@@ -30,8 +40,6 @@ class Extract_Elec_Generation_Data():
         return us_generation_df
 
     def get_eia_response_data(self, state_abbr, generation_type=generation_type):
-        '''
-        '''
         df_list = []
 
         for metric in generation_type:
@@ -61,15 +69,23 @@ class Extract_Elec_Generation_Data():
         # remove duplicate columns created through concat
         state_df = state_df.loc[:, ~state_df.columns.duplicated()]\
                            .fillna(0)
-
         state_df = self.rearrange_state_df_columns(state_df)
 
         return state_df
 
     def rearrange_state_df_columns(self, state_df):
-        column_order = ['state', 'year', 'all_fuels', 'all_solar', 'coal', 'natural_gas', 'other_gas', 'petro_liquids', 'petro_coke',
-                        'nuclear', 'hydro_electric', 'hydro_electric_storage', 'all_solar', 'wind', 'utility_scale_solar', 
+        column_order = ['state', 'year', 'all_fuels', 'coal', 'natural_gas', 'other_gas', 'petro_liquids', 'petro_coke',
+                        'nuclear', 'hydro_electric', 'hydro_electric_storage', 'all_solar','wind', 'utility_scale_solar', 
                         'utility_scale_photovoltaic', 'small_scale_photovoltaic', 'other_renewables', 'utility_scale_thermal', 'geothermal', 
-                        'other_biomass', 'other']
+                        'other_biomass', 'wood_fuels', 'other']
 
         return state_df[column_order]
+
+
+if __name__ == '__main__':
+    extractor = Extract_Elec_Generation_Data()
+
+    print("extracting data from EIA...")
+    print("I'd go grab a quick coffee, this will take 2 to 3 minutes...")
+    extractor.run_extractor().to_csv('us_electric_generation_2001_20.csv')
+    print("data extracted!")
