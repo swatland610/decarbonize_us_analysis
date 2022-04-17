@@ -1,0 +1,50 @@
+﻿state,region,wind capacity,wind electric load,1998_2019_capactity_factors,1998_2016_capactity_factors,2015_2019_capactity_factors
+Alabama,South,22.87,65577.89,,,
+Arizona,West,19.71,56496.45,0.23,0.24,0.26
+Arkansas,South,12.53,35908.76,0.25,,
+California,West,64.59,185181.09,0.27,0.27,0.34
+Colorado,West,14.09,40403.15,0.38,0.36,0.41
+Connecticut,East,7.33,21004.69,0.28,,0.28
+DC,East,2.84,8154.76,,,
+Delaware,East,2.81,8062.10,0.30,,
+Florida,South,60.64,173844.73,,,
+Georgia,East,35.38,101424.87,,,
+Idaho,West,6.08,17421.54,0.32,0.30,
+Illinois,Midwest,36.39,104320.74,0.33,0.35,0.38
+Indiana,Midwest,26.38,75632.34,0.30,0.30,0.35
+Iowa,Midwest,12.90,36974.44,0.36,0.35,0.39
+Kansas,Midwest,10.72,30734.81,0.43,0.43,0.46
+Kentucky,South,19.44,55724.22,,,
+Louisiana,South,24.05,68944.82,,,
+Maine,East,3.00,8594.94,0.29,0.29,0.31
+Maryland,East,15.84,45422.65,0.32,0.34,0.34
+Massachusetts,East,13.66,39152.13,0.28,0.29,0.21
+Michigan,East,26.81,76867.91,0.33,0.33,0.34
+Minnesota,Midwest,17.35,49731.70,0.34,0.36,0.45
+Mississippi,South,12.73,36487.93,,,
+Missouri,Midwest,20.85,59770.71,0.32,0.32,0.41
+Montana,West,3.73,10687.68,0.40,0.36,0.43
+Nebraska,Midwest,7.68,22008.60,0.45,0.44,0.47
+Nevada,West,9.52,27306.10,0.22,0.27,
+New Hampshire,East,2.67,7645.09,0.27,0.25,0.28
+New Jersey,East,19.23,55137.32,0.25,,
+New Mexico,South,6.33,18147.44,0.41,0.38,0.44
+New York,East,37.99,108915.52,0.26,0.26,0.36
+North Carolina,South,34.80,99772.30,0.30,,0.30
+North Dakota,Midwest,5.46,15660.85,0.43,0.43,0.48
+Ohio,Midwest,38.87,111448.44,0.31,0.34,0.32
+Oklahoma,West,16.32,46797.22,0.41,0.41,0.44
+Oregon,West,12.32,35329.59,0.29,0.22,0.33
+Pennsylvania,Midwest,37.76,108251.40,0.29,0.30,0.34
+Rhode Island,East,1.82,5220.28,0.25,,0.26
+South Carolina,South,20.69,59330.54,,,
+South Dakota,Midwest,3.47,9946.34,0.37,0.40,0.46
+Tennessee,Midwest,26.27,75308.01,0.17,0.18,
+Texas,South,107.61,308514.17,0.37,0.36,0.41
+Utah,South,8.18,23460.39,0.23,0.25,0.29
+Vermont,East,1.31,3753.04,0.29,0.29,0.40
+Virginia,South,30.06,86181.02,,,
+Washington,West,22.98,65886.78,0.34,0.26,
+West Virginia,South,8.65,24796.35,0.30,0.28,0.36
+Wisconsin,Midwest,18.10,51893.95,0.30,0.27,0.44
+Wyoming,West,4.35,12479.26,0.34,0.33,0.42
